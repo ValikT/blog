@@ -1,0 +1,22 @@
+<h1><%= @post.title%></h1>
+<p><%= @post.body%></p>
+
+<hr>
+<% @comments.each do |comment|%>
+<p>User <b><%= comment.user.nickname %></b> write: </p>
+<%= comment.text %>
+<hr>
+<% end %>
+
+<%= form_for :postcomments, url: post_postcomment_path(post_id: @post.id) do |f| %>
+
+<% if flash[:notice] %>
+  <div class="notice"> <%= flash[:notice] %> </div>
+<% end %>
+
+<p><%= f.label "Write Comment" %></p>
+<%= f.text_area :text, cols: 10, rows: 5 %><br />
+
+<p><%= f.submit "Send"%></p>
+
+<%end%>
