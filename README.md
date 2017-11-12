@@ -1,5 +1,1 @@
-RoR blog project
-# tokblog
-# firstblog
-# myblog
-# myblog
+this is a RoR project for my univ lessons (30)
