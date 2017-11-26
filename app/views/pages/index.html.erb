@@ -1,6 +1,6 @@
 
 <%= link_to "Create new post", new_post_path, class: "btn btn-default" %>
-
+<%= link_to "Show Gallery", photos_path, class: "btn btn-default" %>
 <div>
 <% @posts.each do |post| %>
 <hr>
@@ -11,7 +11,7 @@
 	<% if current_user != nil and current_user.id == post.user_id %>
 	<p>
 	<%= link_to "Edit",  edit_post_path(post.id) %> or
-	<%= link_to "Delete", post_path(post.id), data: {confirm: 'Rili deleted your post?'}, method: :delete %>
+	<%= link_to "Delete", post_path(post.id), data: {confirm: 'Are you sure ?'}, method: :delete %>
 	</p>
 	<%end%>
 <%end%>
