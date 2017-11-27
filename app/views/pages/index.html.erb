@@ -5,12 +5,13 @@
 <% @posts.each do |post| %>
 <hr>
 	<h1><%= link_to post.title, post_path(post.id) %></h1>
+	<%= sanitize post.body%>
 	<p><%= image_tag post.user.avatar.url(:thumb), width: 30, height: 30 %></p>
 	<p>Author: <%= post.user.nickname %> | 
 	 Create at: <%= post.created_at %></p>
-	<% if current_user != nil and current_user.id == post.user_id %>
+	<% if current_user != nil and current_user.id==post.user_id %>
 	<p>
-	<%= link_to "Edit",  edit_post_path(post.id) %> or
+	<%= link_to "Edit",  edit_post_path(post.id) %> |
 	<%= link_to "Delete", post_path(post.id), data: {confirm: 'Are you sure ?'}, method: :delete %>
 	</p>
 	<%end%>

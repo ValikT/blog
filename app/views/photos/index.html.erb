@@ -4,6 +4,7 @@
 <p>Photo ninchen</p>
 <% else %>
 <% @photos.each do |photo| %>
-	<%= photo.name %>
+ 	 <%= image_tag(photo.photo_url) %>
+ 		<%= photo.name %>
 	<% end %>
 	<% end %>
