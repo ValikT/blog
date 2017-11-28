@@ -1,10 +1,10 @@
 <%= link_to "Upload new photo", new_photo_path, class: "btn btn-default" %>
 <hr>
 <%if @photos == [] %>
-<p>Photo ninchen</p>
+<p>Empty</p>
 <% else %>
 <% @photos.each do |photo| %>
+     <%= photo.name %>
  	 <%= image_tag(photo.photo_url) %>
- 		<%= photo.name %>
 	<% end %>
 	<% end %>

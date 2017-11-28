@@ -269,7 +269,7 @@ PLATFORMS
 
 DEPENDENCIES
   activeadmin
-  bootstrap-sass (~> 3.3.7)
+  bootstrap-sass
   byebug
   capybara (~> 2.13)
   carrierwave (~> 1.0)
