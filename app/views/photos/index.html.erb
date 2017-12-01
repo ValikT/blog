@@ -4,7 +4,10 @@
 <p>Empty</p>
 <% else %>
 <% @photos.each do |photo| %>
-     <%= photo.name %>
  	 <%= image_tag(photo.photo_url) %>
+<p><strong>Category:</strong><%= photo.category.name %></p>
+<p><strong>Photo name:</strong><%= photo.name %></p>
+<p><strong>User name:</strong><%= photo.user.nickname %></p>
+<p><%= link_to "Like", vote_photo_path(photo.id)%> (<%= @like[photo.id] %>)</p>
 	<% end %>
 	<% end %>

@@ -9,7 +9,8 @@ class User < ApplicationRecord
 
   has_many :posts    
   has_many :photos
-  has_many :postcomments   
+  has_many :postcomments  
+  has_many :votes 
 
   validates :nickname, presence: true 
   validates :nickname, length: { in: 3..12 }
